@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block title %}
+<title>Basic Blog</title>
+{% endblock %} {% block body %}
+<br />
+<h1>Home Page</h1>
+<br />
+<main role="main">
+	<div class="jumbotron">
+		<div class="col-sm-8 mx-auto">
+			<h1>Welcome to Basic Blog</h1>
+			<p>
+				This is the most basic blog you can ever develop. The tech stacks
+				involved are Flask web framework & MongoDB database for storing the
+				blogs.
+			</p>
+			<p>
+				<a class="btn btn-secondary" href="/posts">View posts &raquo;</a>
+			</p>
+		</div>
+	</div>
+</main>
+{% endblock %}

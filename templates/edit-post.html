@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %}
+<title>Basic Blog | Edit Post {{ post.id }}</title>
+{% endblock %} {% block body %}
+<br />
+<div class="header" style="text-align: center;">
+	<h1>Edit Post</h1>
+</div>
+<br />
+<form action="/edit/{{ post.id }}" method="post">
+	<label for="title">Title:</label>
+	<input
+		class="form-control"
+		type="text"
+		name="title"
+		id="title"
+		value="{{post.title}}"
+	/>
+	<br />
+	<label for="content">Content:</label>
+	<textarea
+		class="form-control"
+		type="text"
+		name="content"
+		id="content"
+		rows="7"
+	>
+    {{ post.content }}
+    </textarea
+	>
+	<br />
+	<div class="d-flex justify-content-center">
+		<a class="btn btn-secondary btn-md m-2" href="/posts">Cancel</a>
+		<input type="submit" class="btn btn-primary btn-md m-2" value="Save" />
+	</div>
+</form>
+{% endblock %}

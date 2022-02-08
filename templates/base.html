@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='vendor/css/bootstrap.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/main.css') }}"
+		/>
+		{% block title %} {% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand" href="/">Basic Blog</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbar"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="#navbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/posts">Posts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/about">About</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="#navdropdown"
+							data-toggle="dropdown"
+							role="button"
+							>More</a
+						>
+						<div class="dropdown-menu" aria-labelledby="navdropdown">
+							<a class="dropdown-item" href="#">Menu 1</a>
+							<a class="dropdown-item" href="#">Menu 2</a>
+							<a class="dropdown-item" href="#">Menu 3</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">{% block body %} {% endblock %}</div>
+		<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/popper-5.0.0-alpha-4.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}
+<title>Basic Blog | {{ post.title }}</title>
+{% endblock %} {% block body %}
+<br />
+<div class="header" style="text-align: center">
+	<h1>{{ post.title }}</h1>
+</div>
+<br />
+<p class="content">{{ post.content }}</p>
+<a class="btn btn-secondary" href="/edit/{{ post.id }}">Edit</a>
+<a class="btn btn-warning" href="/delete/{{ post.id }}">Archive</a>
+{% endblock %}
